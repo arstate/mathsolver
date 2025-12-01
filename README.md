@@ -4,17 +4,18 @@ Website ini adalah aplikasi pemecah masalah matematika yang menggunakan kamera u
 
 ## Tutorial Setting API Key di Vercel
 
-Agar aplikasi ini dapat berjalan di Vercel, Anda perlu menyimpan API Key Gemini Anda dengan aman di Environment Variables.
+Agar aplikasi ini dapat berjalan di Vercel, Anda perlu menyimpan API Key Gemini Anda dengan aman di Environment Variables dengan prefix `VITE_`.
 
-1. **Push kode ke GitHub/GitLab:** Pastikan kode project ini sudah ada di repository Git Anda.
+1. **Push kode ke GitHub/GitLab:** Pastikan kode project ini sudah ada di repository Git Anda (termasuk package.json dan vite.config.ts).
 2. **Import ke Vercel:**
    - Buka dashboard Vercel (https://vercel.com).
    - Klik "Add New..." -> "Project".
    - Pilih repository Git Anda.
+   - Framework Preset harusnya otomatis terdeteksi sebagai **Vite**.
 3. **Konfigurasi Environment Variable:**
    - Di halaman "Configure Project", cari bagian **Environment Variables**.
-   - Masukkan Key: `API_KEY`
-   - Masukkan Value: `AIzaSyAdJzHJ5hOptBYTRyv-PRv1xnvvHJuQN-Q` (Atau API Key terbaru Anda)
+   - Masukkan Key: `VITE_API_KEY`  <-- **PENTING: Harus diawali VITE_**
+   - Masukkan Value: `AIzaSyAdJzHJ5hOptBYTRyv-PRv1xnvvHJuQN-Q` (Gunakan API Key Anda)
    - Klik tombol **Add**.
 4. **Deploy:**
    - Klik tombol **Deploy**.

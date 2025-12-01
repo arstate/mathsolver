@@ -1,13 +1,16 @@
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.API_KEY || '';
+// Menggunakan import.meta.env untuk Vite
+// Menggunakan optional chaining (?.) dan nullish coalescing (??) agar tidak crash jika undefined
+const apiKey = import.meta.env?.VITE_API_KEY ?? '';
 
 // Initialize the client
+// Kita inisialisasi di luar fungsi agar reuse instance, tapi handle error di dalam fungsi jika key kosong
 const ai = new GoogleGenAI({ apiKey });
 
 export const solveMathProblem = async (base64Image: string): Promise<{ text: string }> => {
   if (!apiKey) {
-    throw new Error("API Key tidak ditemukan. Pastikan API_KEY sudah diset di environment variables.");
+    throw new Error("API Key tidak ditemukan. Pastikan Environment Variable 'VITE_API_KEY' sudah diset di Vercel.");
   }
 
   // Remove the data URL prefix if present (e.g., "data:image/jpeg;base64,")
