@@ -1,0 +1,7 @@
+{
+  "name": "Matematika Solver ID",
+  "description": "Aplikasi pemecah soal matematika cerdas menggunakan kamera dan Google Gemini.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
